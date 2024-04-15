@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR code</title>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    
+    <div id="common_box">
+        <div class="qr">
+            <div id="qrcode"></div>
+        </div>
+        <div class="inputs">
+            <h3>Qr Code Converter</h3>
+            <input type="text"><button onclick="show()">Convert</button>
+        </div>
+    </div>
+
+
+    <script src="jquery.min.js"></script>
+    <script src="qrcode.min.js"></script>
+    <script type="text/javascript">
+        window.onkeydown = btn
+        function btn(e){
+            console.log(e);
+        }
+        const input = document.querySelector("input")
+        let qrcode = new QRCode(document.getElementById("qrcode"), {
+            text: `https://${input.value}`,
+            width: 128,
+            height: 128,
+            colorDark: "#2B7DFA",
+            colorLight: "#fff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+        function show() {
+            qrcode.clear()
+            qrcode.makeCode(input.value);
+        }
+    </script>
+</body>
+
+</html>

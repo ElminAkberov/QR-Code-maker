@@ -1,0 +1,41 @@
+body{
+    font-family:"Outfit" ;
+    background-color: #D5E1EF;
+}
+#common_box{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin:20vh auto;
+    width: 50%;
+}
+.qr{
+    background-color: #2B7DFA;
+    padding: 50px;
+}
+.inputs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    width: 228px;
+}
+input{
+    margin: 10px 0 ;
+    outline: none;
+}
+button{
+    background-color: #fff;
+    border: 0;
+    width: 100%;
+    font-size: 18px;
+    transition: .5s;
+}
+button:hover{
+    background: #2B7DFA;
+    color: #fff;
+}
+@media only screen and (min-width: 768px) {
+
+}
